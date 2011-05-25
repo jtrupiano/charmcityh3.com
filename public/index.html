@@ -1,275 +1,294 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-  <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>Ruby on Rails: Welcome aboard</title>
-    <style type="text/css" media="screen">
-      body {
-        margin: 0;
-        margin-bottom: 25px;
-        padding: 0;
-        background-color: #f0f0f0;
-        font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-        font-size: 13px;
-        color: #333;
-      }
-      
-      h1 {
-        font-size: 28px;
-        color: #000;
-      }
-      
-      a  {color: #03c}
-      a:hover {
-        background-color: #03c;
-        color: white;
-        text-decoration: none;
-      }
-      
-      
-      #page {
-        background-color: #f0f0f0;
-        width: 750px;
-        margin: 0;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      
-      #content {
-        float: left;
-        background-color: white;
-        border: 3px solid #aaa;
-        border-top: none;
-        padding: 25px;
-        width: 500px;
-      }
-      
-      #sidebar {
-        float: right;
-        width: 175px;
-      }
-
-      #footer {
-        clear: both;
-      }
-      
-
-      #header, #about, #getting-started {
-        padding-left: 75px;
-        padding-right: 30px;
-      }
-
-
-      #header {
-        background-image: url("images/rails.png");
-        background-repeat: no-repeat;
-        background-position: top left;
-        height: 64px;
-      }
-      #header h1, #header h2 {margin: 0}
-      #header h2 {
-        color: #888;
-        font-weight: normal;
-        font-size: 16px;
-      }
-      
-      
-      #about h3 {
-        margin: 0;
-        margin-bottom: 10px;
-        font-size: 14px;
-      }
-      
-      #about-content {
-        background-color: #ffd;
-        border: 1px solid #fc0;
-        margin-left: -11px;
-      }
-      #about-content table {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 11px;
-        border-collapse: collapse;
-      }
-      #about-content td {
-        padding: 10px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-      }
-      #about-content td.name  {color: #555}
-      #about-content td.value {color: #000}
-      
-      #about-content.failure {
-        background-color: #fcc;
-        border: 1px solid #f00;
-      }
-      #about-content.failure p {
-        margin: 0;
-        padding: 10px;
-      }
-      
-      
-      #getting-started {
-        border-top: 1px solid #ccc;
-        margin-top: 25px;
-        padding-top: 15px;
-      }
-      #getting-started h1 {
-        margin: 0;
-        font-size: 20px;
-      }
-      #getting-started h2 {
-        margin: 0;
-        font-size: 14px;
-        font-weight: normal;
-        color: #333;
-        margin-bottom: 25px;
-      }
-      #getting-started ol {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #getting-started li {
-        font-size: 18px;
-        color: #888;
-        margin-bottom: 25px;
-      }
-      #getting-started li h2 {
-        margin: 0;
-        font-weight: normal;
-        font-size: 18px;
-        color: #333;
-      }
-      #getting-started li p {
-        color: #555;
-        font-size: 13px;
-      }
-      
-      
-      #search {
-        margin: 0;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        font-size: 11px;
-      }
-      #search input {
-        font-size: 11px;
-        margin: 2px;
-      }
-      #search-text {width: 170px}
-      
-      
-      #sidebar ul {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #sidebar ul h3 {
-        margin-top: 25px;
-        font-size: 16px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #ccc;
-      }
-      #sidebar li {
-        list-style-type: none;
-      }
-      #sidebar ul.links li {
-        margin-bottom: 5px;
-      }
-      
-    </style>
-    <script type="text/javascript" src="javascripts/prototype.js"></script>
-    <script type="text/javascript" src="javascripts/effects.js"></script>
-    <script type="text/javascript">
-      function about() {
-        if (Element.empty('about-content')) {
-          new Ajax.Updater('about-content', 'rails/info/properties', {
-            method:     'get',
-            onFailure:  function() {Element.classNames('about-content').add('failure')},
-            onComplete: function() {new Effect.BlindDown('about-content', {duration: 0.25})}
-          });
-        } else {
-          new Effect[Element.visible('about-content') ? 
-            'BlindUp' : 'BlindDown']('about-content', {duration: 0.25});
-        }
-      }
-      
-      window.onload = function() {
-        $('search-text').value = '';
-        $('search').onsubmit = function() {
-          $('search-text').value = 'site:rubyonrails.org ' + $F('search-text');
-        }
-      }
-    </script>
-  </head>
-  <body>
-    <div id="page">
-      <div id="sidebar">
-        <ul id="sidebar-items">
-          <li>
-            <form id="search" action="http://www.google.com/search" method="get">
-              <input type="hidden" name="hl" value="en" />
-              <input type="text" id="search-text" name="q" value="site:rubyonrails.org " />
-              <input type="submit" value="Search" /> the Rails site
-            </form>
-          </li>
-        
-          <li>
-            <h3>Join the community</h3>
-            <ul class="links">
-              <li><a href="http://www.rubyonrails.org/">Ruby on Rails</a></li>
-              <li><a href="http://weblog.rubyonrails.org/">Official weblog</a></li>
-              <li><a href="http://wiki.rubyonrails.org/">Wiki</a></li>
-            </ul>
-          </li>
-          
-          <li>
-            <h3>Browse the documentation</h3>
-            <ul class="links">
-              <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
-              <li><a href="http://stdlib.rubyonrails.org/">Ruby standard library</a></li>
-              <li><a href="http://corelib.rubyonrails.org/">Ruby core</a></li>
-              <li><a href="http://guides.rubyonrails.org/">Rails Guides</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-
-      <div id="content">
-        <div id="header">
-          <h1>Welcome aboard</h1>
-          <h2>You&rsquo;re riding Ruby on Rails!</h2>
-        </div>
-
-        <div id="about">
-          <h3><a href="rails/info/properties" onclick="about(); return false">About your application&rsquo;s environment</a></h3>
-          <div id="about-content" style="display: none"></div>
-        </div>
-        
-        <div id="getting-started">
-          <h1>Getting started</h1>
-          <h2>Here&rsquo;s how to get rolling:</h2>
-          
-          <ol>          
-            <li>
-              <h2>Use <tt>script/generate</tt> to create your models and controllers</h2>
-              <p>To see all available options, run it without parameters.</p>
-            </li>
-            
-            <li>
-              <h2>Set up a default route and remove or rename this file</h2>
-              <p>Routes are set up in config/routes.rb.</p>
-            </li>
-
-            <li>
-              <h2>Create your database</h2>
-              <p>Run <tt>rake db:migrate</tt> to create your database. If you're not using SQLite (the default), edit <tt>config/database.yml</tt> with your username and password.</p>
-            </li>
-          </ol>
-        </div>
-      </div>
-      
-      <div id="footer">&nbsp;</div>
+<head>
+  <title>Charm City Hash House Harriers Hymnal</title>
+  <link rel="stylesheet" type="text/css" href="stylesheets/reset.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+  <script type="text/javascript" src="javascripts/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/home.js"></script>
+</head>
+<body>
+  <div id="header">
+    <div id="logo">
+      <h2><a href="javascript:void(0)">Charm City H3</a></h2>  
     </div>
-  </body>
+    <div id="nav">
+      <ul>
+        <li><a href="javascript:void(0)">Hymnal</a></li>
+        <li><a href="javascript:void(0)">Calendar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="content">
+    <div class="container_wide" id="intro">
+      <div class="container_fixed">
+        <div>
+          <h1>Charm City H3</h1>
+          <p class="subtitle">A bunch of wankers running the streets of Baltimore</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="next_trail" class="container_wide">
+      <div class="container_fixed">
+        <div>
+          <div class="time_and_place">
+            <h2>Next Trail: Thursday, May 26, 2011, 6:30PM</h2>
+            <h3>Riptide by the Bay, 1718 Thames Street</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container_wide" id="summary">
+      <div class="container_fixed">
+        <div id="description">
+          <h4>CCH3 #1</h4>
+          <p><strong>Why</strong>: because you need another excuse to hash!  plus now we're in your backyard!</p>
+          <p><strong>When</strong>: Thursday, May 26.  Sign-in / prelube at 6:30PM, hares away at 7PM.  Pack away at 7:15PM.</p>
+          <p><strong>Hares</strong>: ATM and GAP</p>
+          <p><strong>Where</strong>: Riptide by the Bay ($2 Boh draft prelubes), 1718 Thames Street</p>
+          <p><strong>Public Transit Options</strong>: Orange Line to Aliceanna & Central, walk the last 5 blocks.  The 13 to Washington & Eastern, walk the last 5 blocks.</p>
+          <p><strong>Cost</strong>: Hash cash is $4, but bring $5 for stops on trail (plus whatever you'll spend prelubing).</p>
+          <p><strong>Theme</strong>: John Waters.  Appropriately Baltimore.  Pre-hash requirement: watch Pink Flamingos, pick your favorite outfit and wear it to the hash!  I'm sure between The Love Zone and Salvation Army stores on Broadway you'll be able to pull together an outfit.</p>
+          <p>Circle + on after on my roof (817 S Broadway)</p>
+          <p><strong>Friendlies</strong>: shiggy rating = 0, this is a city trail.  Bring $5 (or more if you like) + ID on trail, you'll need it.  I may have some burgers/dogs to cook up after circle at my place.  And who knows there may even be some four loko leftover.</p></p>
+        </div>
+        <div id="map">
+          <iframe width="460" height="325" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Riptide+By+The+Bay,+Thames+Street,+Baltimore,+MD&aq=0&sll=39.282148,-76.591916&sspn=0.011294,0.022573&g=1718+Thames+Street,+Baltimore,+MD&ie=UTF8&hq=Riptide+By+The+Bay,&hnear=Thames+St,+Baltimore,+Maryland+21231&z=16&amp;output=embed"></iframe>      
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+
+    <div class="container_wide" id="hymnal">
+      <div class="container_fixed">
+        <div id="song_links">
+          <h3>A Micro Hymnal</h3>
+          <ul>
+            <li><a href="javascript:void(0)" onclick="showSong(1);">CCH3 Pre-Trail Chant</a></li>
+            <li><a href="javascript:void(0)" onclick="showSong(2);">Put the Gun in Your Hand</a></li>
+            <li><a href="javascript:void(0)" onclick="showSong(3);">Mayor of Bayswater</a></li>
+            <li><a href="javascript:void(0)" onclick="showSong(4);">Follow the Hares</a></li>
+            <li><a href="javascript:void(0)" onclick="showSong(5);">Virgin Serenade</a></li>
+          </ul>
+        </div>
+        <div id="lyrics" class="song_text">
+          <p>Song lyrics go here!</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+
+    <div>
+      <h2>Some great hymnals</h2>
+      <a href="http://bostonhash.wdfiles.com/local--files/hash-songs/hymnal.pdf">Boston</a><br/>
+      <a href="http://pwoodford.net/hashblog/?page_id=201">Half Mind</a><br/>
+      <a href="http://www.bfhhh.org/songs/hymnal.txt">BFH3</a><br/>
+    </div>
+  </div>
+  <div id="footer">
+    
+  </div>
+  <div id="data">
+    <div id="song1" class="song">
+      <h2>Charm City H3 Warmup Prayer</h2>
+      <p class="melody">melody: Ray Lewis's <a href="http://www.youtube.com/watch?v=OwXtZ4zn6bo&feature=related">"Game Time" Chant</a></p>
+      <p class="purpose">opening circle prayer replacement</p>
+      <p>
+        WHAT TIME IS IT? (HASH TIME!)<br/>
+        WHAT TIME IS IT? (HASH TIME!)<br/>
+        Any wankers in the house (skeet skeet skeet skeet)<br/>
+        Any wankers in the house (skeet skeet skeet skeet)<br/>
+        WHAT TIME IS IT? (HASH TIME!)<br/>
+        WHAT TIME IS IT? (HASH TIME!)<br/>
+        Any hashers in the house (on on on on)<br/>
+        Any hashers in the house (on on on on)
+      </p>
+    </div>
+
+    <div id="song2" class="song">
+      <h2>Put the gun in your hand, little Omar</h2>
+      <p class="melody">Baltimore version of Put in your hand Mrs. Murphy</p>
+      <p class="purpose">a down down song</p>
+      <p>
+        Put the gun in your hand, little Omar<br/>
+        It only holds a couple dozen rounds<br/>
+        It's long, black and shiny like a crowbar<br/>
+        And when you pull the trigger they go down, down, down, down
+      </p>
+    </div>
+
+    <div id="song3" class="song">
+      <h2>The Mayor of Bayswater</h2>
+      <p class="purpose">to welcome the hares</p>
+
+      <strong>verse</strong><br/>
+      <p>
+        The mayor of Bayswater<br/>
+        He had a lovely daughter<br/>
+        And the hairs of her dickey-di-do<br/>
+        Hung down to her knees<br/>
+      </p>
+
+      <strong>chorus</strong><br/>
+      <p>
+        And the hairs<br/>
+        And the hairs<br/>
+        And the hairs of her dickey-di-do<br/>
+        Hung down to her knees<br/>
+      </p>
+
+      <strong>other verses</strong><br/>
+      <p>
+        One black one, one white one,<br/>
+        One with a little shite on,<br/>
+        And one with a little light on<br/>
+        To show us the way<br/>
+      </p>
+
+      <p>
+        They're so soft and spongey<br/>
+        You can use them for a bungie<br/>
+        And the hairs of her dickey-di-do<br/>
+        Hung down to her knees<br/>
+      </p>
+
+      <p>
+        I've smelt it, I've felt it<br/>
+        It's just like a piece of velvet<br/>
+        And the hairs of her dickey-di-do<br/>
+              Hung down to her knees<br/>
+            </p>
+
+      <p>
+        She came from Glamorgan<br/>
+        With a cunt like a barrel organ<br/>
+        And the hairs of her dickey-di-do<br/>
+              Hung down to her knees<br/>
+            </p>
+
+      <p>
+        She married an Italian<br/>
+        Who was hung like a fucking stallion<br/>
+        And the hairs of her dickey-di-do<br/>
+              Hung down to her knees<br/>
+            </p>
+
+      <p>
+        She divorced the Italian<br/>
+        And married a fucking stallion<br/>
+        And the hairs of her dickey-di-do<br/>
+              Hung down to her knees<br/>
+            </p>
+
+      <p>
+        Her cat's name was Boris<br/>
+        And it played with her clitoris<br/>
+        And the hairs of her dickey-di-do<br/>
+              Hung down to her knees<br/>
+            </p>
+
+      <p>
+        She shays she's not a whore<br/>
+        But she bangs like a shit-house door<br/>
+        And the hairs of her dickey-di-do<br/>
+              Hung down to her knees<br/>
+            </p>
+
+      <p>
+        She went to Arabia<br/>
+        And got camel-drool on her labia<br/>
+        And the hairs of her dickey-di-do<br/>
+              Hung down to her knees<br/>
+            </p>
+
+      <p>
+        She married a Spaniard<br/>
+        With a prick like a bloody lanyard<br/>
+        And the hairs of her dickey-di-do<br/>
+              Hung down to her knees<br/>
+            </p>
+
+      <p>
+        She stayed in Seattle<br/>
+        And went down on cattle<br/>
+        And the hairs of her dickey-di-do<br/>
+              Hung down to her knees<br/>
+            </p>
+
+      <p>
+        I've licked it, I've kissed it<br/>
+        It tastes like a chocolate biscuit<br/>
+        And the hairs of her dickey-di-do<br/>
+              Hung down to her knees<br/>
+            </p>
+
+      <p>
+        Her vagina is squishy<br/>
+        And smells a bit fishy<br/>
+        And the hairs of her dickey-di-do<br/>
+              Hung down to her knees<br/>
+            </p>
+
+      <p>
+        The aroma, it lingers<br/>
+        It smells like fish fingers<br/>
+        And the hairs of her dickey-di-do<br/>
+              Hung down to her knees<br/>
+            </p>
+      
+      <p>(And so on...)</p>
+    </div>
+
+    <div id="song4" class="song">
+      <h2>Follow The Hares</h2>
+      <p class="melody">melody: unknown</p>
+      <p class="purpose">to close circle</p>
+      <strong>Chorus:</strong><br />
+      <p>
+        Drink a little bit, fuck a little bit, follow the hares<br />
+        Follow the hares with your tits in the air<br />
+        Drink a little bit, fuck a little bit, follow the hares<br />
+        Follow the hares all the way
+      </p>
+
+      <strong>Verse: </strong><br />
+      <p>
+        My girlfriend[/boyfriend]’s a postman, a postman, a postman <br/>
+        A mighty fine postman is she[/he]  (is he/she!) <br/>
+        All day she[/he] licks stamps, she[/he] licks stamps, she[/he] licks stamps,<br/>
+        And when he comes home, she[/he]licks me 
+      </p>
+
+      <p><strong>Repeat chorus </strong></p>
+
+      <strong>Other verses (verse structure as above):</strong><br/>
+      
+      <p>Baker/creams puffs/creams...  </p>
+      <p>Milkman/milks cows/milks... </p>
+      <p>Oilman/drills wells/drills... </p>
+      <p>Ploughman/ploughs fields/plows...</p>
+      <p>Glassblower/blows glass/blows... </p>
+      <p>Mail clerk/licks stamps/licks... </p>
+      <p>Nurse/takes temps/takes... </p>
+      <p>Gymnast/strides poles/strides... </p>
+      <p>Baker/kneads bread/needs... </p>
+      <p>Dancer/does steps/does... </p>
+      <p>Asthmatic/sucks air/sucks... </p>
+      <p>Cowboy/rides broncs/rides... </p>
+      <p>Mechanic/screws bolts/screws... </p>
+      <p>Guitarist/plays licks/licks... </p>
+      <p>Carpenter/bangs nails/bangs... </p>
+      <p>Truck driver/grinds gears/grinds... </p>
+      <p>Postman/stuffs boxes/stuffs... </p>
+      <p>Plumber/lays pipe/lays... </p>
+      <p>Chef/eats this, he eats that/eats... </p>
+      <p>Bricklayer/lays brick/lays... </p>
+      <p>Dentist/drills you/drills... </p>
+      <p>Taxidermist/stuffs dead things/stuffs...  </p>
+      <p>Lawyer/fucks you/fucks... </p>
+      <p>Hooker/fucks you/goes to sleep...</p>
+    </div>
+  </div>
+</body>
 </html>

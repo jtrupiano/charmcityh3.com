@@ -1,0 +1,286 @@
+
+/* tags
+----------------------------------------------- */
+body {
+	background-color: #00222e;
+	font-family: sans-serif;
+	font-size: 18px;
+	line-height: 24px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: sans-serif;
+	text-shadow: 1px 1px 0px #fff;
+}
+
+h1 {
+}
+
+h2 {
+	font-size:21px;
+	font-weight:bold;
+}
+
+h3 {
+	padding-bottom:8px;
+	font-size:24px;
+	line-height:24px;
+	color:#00222e;
+	text-shadow: 1px 1px 0px #fff;
+}
+
+h4 {
+	padding-bottom:5px;
+	font-size:21px;
+	line-height:21px;
+}
+
+a:link, a:visited, a:focus {
+	color:#0066cc;
+	text-decoration:none;
+	font-weight:normal;
+	border:none;
+}
+
+a:hover {
+	color:#0066cc;
+	color:#00ccff;
+	border-bottom:1px solid #0066cc;
+	border:none;
+}
+
+/* layout
+----------------------------------------------- */
+#content {
+}
+.container_wide {
+	padding:30px 0 30px 0;
+	width:100%;
+	background-color:#e4e4e4;
+	border-bottom: 1px dashed #666;
+	border-top: 1px dashed #fff;
+}
+.container_fixed {
+	width:960px;
+	margin: 0 auto 0 auto;
+}
+
+/* header
+----------------------------------------------- */
+#header {
+	margin:0;
+	padding: 10px 0 10px 0;
+	position:fixed;
+	top:0px;
+	left:0px;
+	height: auto;
+	width: 100%;
+	background-color:#00222e;
+	border-bottom: 1px solid black;
+	z-index: 1000;
+}
+
+  #logo {
+    padding: 0 0 0 15px;
+    position:relative;
+    float:left;
+  }
+
+    #logo h2 {
+      font-size:18px;
+      font-weight:bold;
+      text-shadow:none;
+    }
+    #logo h2 a:link, #logo h2 a:visited, #logo h2 a:focus {
+      text-decoration:none;
+      color:#fff;
+      border:none;
+    }
+    #logo h2 a:hover {
+      text-decoration:none;
+      border-bottom: 1px solid #fff;
+    }
+
+  #nav {
+    position:relative;
+    float:left;
+  }
+  #nav a:link, #nav a:visited, #nav a:focus {
+    text-decoration:none;
+    color:#fff;
+    border:none;
+  }
+  #nav a:hover {
+    text-decoration:none;
+    border-bottom: 1px solid #fff;
+  }
+  #nav ul, #social_media ul {
+    font-size:16px;
+  }
+  #nav ul li {
+    margin:0 0 0 20px;
+    position:relative;
+    float:left;
+  }
+
+/* intro
+----------------------------------------------- */
+
+#intro {
+	margin-top:45px;
+	padding-top:30px;
+	padding-bottom:20px;
+	text-align: center;
+	border:none;
+	background-color:#0461c0;
+}
+#intro h1 {
+	padding:0;
+	margin:0;
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 60px;
+  color: white;
+	text-shadow: 1px 1px 0px #00222e;
+}
+
+/* next_trail
+----------------------------------------------- */
+#next_trail {
+	background-color:#fdfee0;
+}
+
+  .time_and_place {
+    margin: 0 10px 0 10px;
+    font-size:28px;
+    line-height:28px;
+    text-align:center;
+  }
+  .time_and_place h2 {
+    padding-bottom:10px;
+    font-size:36px !important;
+    line-height:36px;
+  }
+  .time_and_place h3 {
+    padding-bottom:0;
+    font-size:26px !important;
+    line-height:26px;
+    font-weight:normal;
+    text-transform:none;
+  }
+
+/* summary
+----------------------------------------------- */
+
+#summary {
+	background-color:#fff;
+	font-size:18px;
+	line-height:24px;
+}
+  #summary h3 {
+    font-size:28px;
+    line-height:28px;
+  }
+  #summary h4 {
+    font-style:italic;
+  }
+  #description, #map {
+    margin:0 10px 0 10px;
+    position:relative;
+    float:left;
+    width:460px;
+  }
+
+  #description p {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 8px;
+  }
+
+/* hymnal
+----------------------------------------------- */
+
+#hymnal {
+	border-bottom:none;
+	padding-bottom:0;
+}
+
+  #song_links, #lyrics {
+    margin:0 10px 0 10px;
+    position:relative;
+    float:left;
+    background-color:#fff;
+    width:300px;
+    border:none;
+    background:none;
+  }
+
+  #lyrics {
+    width: 600px;
+  }
+
+    #song_links ul {
+      margin-top:5px;
+      border-top:1px solid #ccc;
+      border-bottom:1px solid #efefef;
+    }
+
+    #song_links li {
+      padding:8px 0 8px 0;
+      font-size: 18px;
+      border-bottom: 1px solid #ccc;
+      border-top:1px solid #efefef;
+      background-repeat: no-repeat;
+      background-position: left center;
+    }
+
+
+#data {
+  display: none;
+}
+
+/* footer
+----------------------------------------------- */
+
+#footer {
+	background-color:#00222e;
+	padding:30px 0 30px 0;
+	color:#ccc;
+	font-size:14px;
+	text-align:center;
+}
+a.sig:link, a.sig:visited, a.sig:focus {
+	color:#ccc;
+	text-decoration:underline;
+}
+a.sig:hover {
+	color:#fff;
+}
+
+/* float clearing
+----------------------------------------------- */
+
+/* float clearing for IE6 */
+* html .clear {
+	height: 1%;
+	overflow: visible;
+}
+/* float clearing for IE7 */
+*+html .clear {
+	min-height: 1%;
+}
+/* float clearing for everyone else */
+.clear:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+.clear {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
