@@ -216,7 +216,7 @@ a:hover {
   }
 
   #lyrics {
-    width: 600px;
+    width: 620px;
   }
 
     #song_links ul {
@@ -234,6 +234,26 @@ a:hover {
       background-position: left center;
     }
 
+  .song {
+    font-size: 14px;
+  }
+
+  .song p.melody {
+    font-size: 12px;
+    font-style: italic;
+  }
+
+  .song p.purpose {
+    font-size: 12px;
+  }
+
+  .song div.lyrics {
+    margin-left: 20px;
+  }
+
+  .song div.lyrics p.verse {
+    margin-bottom: 12px;
+  }
 
 #data {
   display: none;
